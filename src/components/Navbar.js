@@ -6,7 +6,7 @@ import { faHouse, faFilePen, faArrowRightToBracket } from '@fortawesome/free-sol
 
 
 
-const Navbar = () => {
+const Navbar = ({ isAuth }) => {
 	return (
 		<nav>
 			<Link to="/">
