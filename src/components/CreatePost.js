@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const CreatePost = () => {
 	const [title, setTitle] = useState("");
-	const [postText, setPostText] = useState();
+	const [postText, setPostText] = useState("");
 	const navigate = useNavigate();
 
 	const createPost = async () => {
@@ -22,7 +22,7 @@ const CreatePost = () => {
 	}
 
 	return (
-		<div className='createPostPage'>
+		<div className="createPostPage">
 			<div className="postContainer">
 				<h1>記事を投稿する</h1>
 				<div className="inputPost">
@@ -35,7 +35,7 @@ const CreatePost = () => {
 				</div>
 				<div className="inputPost">
 					<div>投稿</div>
-					<textarea 
+					<textarea
 						placeholder='投稿内容を記入'
 						onChange={(e) => {setPostText(e.target.value)}}
 					></textarea>
