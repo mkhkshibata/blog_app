@@ -1,9 +1,9 @@
 import { signOut } from "firebase/auth";
-import React from 'react'
+import React, { useEffect } from 'react'
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 
-const Logout = ({ setIsAuth }) => {
+const Logout = ({ setIsAuth, isAuth }) => {
 	const navigate = useNavigate();
 	const logout = () => {
 		//ログアウト
@@ -19,6 +19,13 @@ const Logout = ({ setIsAuth }) => {
 			console.log(error);
 		})
 	};
+
+	useEffect(() => {
+		if(!isAuth) {
+			navigate("/login");
+		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<div>
