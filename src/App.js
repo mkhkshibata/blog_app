@@ -9,16 +9,14 @@ import Navbar from './components/Navbar'
 
 
 function App() {
-  const [isAuth, setIsAuth] = useState(
-    Boolean(localStorage.getItem("isAuth"))
-  );
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
   return (
     <>
       <Router>
       <Navbar isAuth={isAuth} />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home isAuth={isAuth} />}></Route>
           <Route path="/createpost" element={<CreatePost isAuth={isAuth} />}></Route>
           <Route path="/login" element={<Login setIsAuth={setIsAuth} />}></Route>
           <Route path="/logout" element={<Logout setIsAuth={setIsAuth} isAuth={isAuth} />}></Route>
